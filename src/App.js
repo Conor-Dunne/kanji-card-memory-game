@@ -14,13 +14,17 @@ function App() {
 
   const [currentCards, setCurrentCards] = useState(kanji);
 
-  console.log(currentCards);
 
-  function handleClick() {
+  function handleClick(kanjiObj) {
+    if(kanjiObj.isClicked) {
+      console.log("Game over");
+      return
+    }
     let shuffledCards = currentCards.slice();
+    shuffledCards[shuffledCards.indexOf(kanjiObj)].isClicked = true;
     shuffledCards.sort((a, b) => 0.5 - Math.random());
     setCurrentCards(shuffledCards);
-    console.log("click1")
+    console.log(currentCards)
   }
 
   return (
@@ -42,7 +46,6 @@ function App() {
 function KanjiCard({ card, onCardClick }) {
  
 
-  console.log("click2");
 
   return (
     <div 
@@ -59,7 +62,7 @@ function KanjiCard({ card, onCardClick }) {
         padding: '15px',
         textAlign: 'center',
         }}
-        onClick={onCardClick}
+        onClick={() => onCardClick(card)}
         >
       <h1>{card.character}</h1>
       <p>{card.meaning}</p>
