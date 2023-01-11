@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import kanji from './kanjiData';
 import { useState } from 'react';
