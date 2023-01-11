@@ -45,7 +45,9 @@ function KanjiCard({ card, onCardClick }) {
   console.log("click2");
 
   return (
-    <div style={{ 
+    <div 
+        className='card'
+        style={{ 
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
