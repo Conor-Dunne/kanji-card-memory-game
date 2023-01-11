@@ -13,21 +13,25 @@ import { useState } from 'react';
 function App() {
 
   const [currentCards, setCurrentCards] = useState(kanji);
+  const [score, setScore] = useState(0);
+  let message = "Keep on going!"
 
 
   function handleClick(kanjiObj) {
     if(kanjiObj.isClicked) {
-      console.log("Game over");
+      message = "Game over!"
       return
     }
     let shuffledCards = currentCards.slice();
     shuffledCards[shuffledCards.indexOf(kanjiObj)].isClicked = true;
     shuffledCards.sort((a, b) => 0.5 - Math.random());
     setCurrentCards(shuffledCards);
-    console.log(currentCards)
+    setScore(score + 1);
+    console.log("score:" ,score);
   }
 
   return (
+    
     <div style={{
       display: 'flex',
       flexWrap: 'wrap',
@@ -37,6 +41,8 @@ function App() {
       margin: '0 auto',
       maxWidth: '1200px',
     }}>
+      <h1>Score: {score}</h1>
+      <h1>{message}</h1>
       {currentCards.map((obj) => <KanjiCard key={obj.id} card={obj} onCardClick={handleClick} />)}
     </div>
   );
