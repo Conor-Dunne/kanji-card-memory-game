@@ -13,12 +13,13 @@ function App() {
 
   const [currentCards, setCurrentCards] = useState(kanji);
   const [score, setScore] = useState(0);
-  let message = "Keep on going!"
+  const [gameOver, setGameOver] = useState(false);
 
 
   function handleClick(kanjiObj) {
+    if(gameOver) return;
     if(kanjiObj.isClicked) {
-      message = "Game over!"
+      setGameOver(true)
       return
     }
     let shuffledCards = currentCards.slice();
@@ -26,7 +27,6 @@ function App() {
     shuffledCards.sort((a, b) => 0.5 - Math.random());
     setCurrentCards(shuffledCards);
     setScore(score + 1);
-    console.log("score:" ,score);
   }
 
   return (
@@ -41,7 +41,7 @@ function App() {
       maxWidth: '1200px',
     }}>
       <h1>Score: {score}</h1>
-      <h1>{message}</h1>
+      <h1>{gameOver ? "Gameover" : "let's go!"}</h1>
       {currentCards.map((obj) => <KanjiCard key={obj.id} card={obj} onCardClick={handleClick} />)}
     </div>
   );
