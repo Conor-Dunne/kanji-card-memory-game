@@ -20,6 +20,7 @@ function App() {
       resetCards(newDeck);
       setCurrentCards(newDeck);
       setGameOver(false);
+      console.log(currentCards);
       return
     }
     let newCards = currentCards.slice();
