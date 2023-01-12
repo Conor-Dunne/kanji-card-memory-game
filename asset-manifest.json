@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/kanji-card-memory-game/static/css/main.c4610ce1.css",
-    "main.js": "/kanji-card-memory-game/static/js/main.3f1aa48e.js",
+    "main.css": "/kanji-card-memory-game/static/css/main.bef15b77.css",
+    "main.js": "/kanji-card-memory-game/static/js/main.06e0288d.js",
     "static/js/787.11517359.chunk.js": "/kanji-card-memory-game/static/js/787.11517359.chunk.js",
+    "static/media/Japanese-fan-seamless-pattern.svg": "/kanji-card-memory-game/static/media/Japanese-fan-seamless-pattern.cdb5f1f65a1b3c325087.svg",
     "index.html": "/kanji-card-memory-game/index.html",
-    "main.c4610ce1.css.map": "/kanji-card-memory-game/static/css/main.c4610ce1.css.map",
-    "main.3f1aa48e.js.map": "/kanji-card-memory-game/static/js/main.3f1aa48e.js.map",
+    "main.bef15b77.css.map": "/kanji-card-memory-game/static/css/main.bef15b77.css.map",
+    "main.06e0288d.js.map": "/kanji-card-memory-game/static/js/main.06e0288d.js.map",
     "787.11517359.chunk.js.map": "/kanji-card-memory-game/static/js/787.11517359.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c4610ce1.css",
-    "static/js/main.3f1aa48e.js"
+    "static/css/main.bef15b77.css",
+    "static/js/main.06e0288d.js"
   ]
 }
