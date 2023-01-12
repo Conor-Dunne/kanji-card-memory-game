@@ -40,11 +40,12 @@ function App() {
       justifyContent: 'center',
       padding: '10px',
       margin: '0 auto',
-      maxWidth: '1200px',
     }}>
       
       {currentCards.map((obj) => <KanjiCard key={obj.id} card={obj} onCardClick={handleClick} />)}
     </div>
+    <p>Photo by <a href="https://unsplash.com/@gaspanik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Masaaki Komori</a> on <a href="https://unsplash.com/photos/14cHwhRKJh8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  </p>
     </>
   );
 
@@ -89,13 +90,19 @@ function KanjiCard({ card, onCardClick }) {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        border: "1px solid black",
+        border: "5px solid #ffc0cb82",
+        borderRadius: "5px",
+        background: "white",
+        color: "rgb(151 129 117)",
         flex: " 0 1 calc(25% - 1em)",
         minWidth: "200px",
         maxWidth: "300px",
         padding: '15px',
         textAlign: 'center',
         fontSize: "10px",
+        fontWeight: "900",
+        fontSize: "1.5em",
+        boxShadow: '3px 2px 3px 0px rgb(151 129 117)',
         }}
         onClick={() => onCardClick(card)}
         >
