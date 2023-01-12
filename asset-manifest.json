@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/kanji-card-memory-game/static/css/main.c4610ce1.css",
+    "main.js": "/kanji-card-memory-game/static/js/main.3f1aa48e.js",
+    "static/js/787.11517359.chunk.js": "/kanji-card-memory-game/static/js/787.11517359.chunk.js",
+    "index.html": "/kanji-card-memory-game/index.html",
+    "main.c4610ce1.css.map": "/kanji-card-memory-game/static/css/main.c4610ce1.css.map",
+    "main.3f1aa48e.js.map": "/kanji-card-memory-game/static/js/main.3f1aa48e.js.map",
+    "787.11517359.chunk.js.map": "/kanji-card-memory-game/static/js/787.11517359.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c4610ce1.css",
+    "static/js/main.3f1aa48e.js"
+  ]
+}
