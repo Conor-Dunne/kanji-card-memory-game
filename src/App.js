@@ -2,35 +2,36 @@ import './App.css';
 import kanji from './kanjiData';
 import { useState } from 'react';
 
-
-
-// click a kanji square and change it's clicked state to 'true'
-//...and shuffle the positions of the cards.
-
-
-
 function App() {
 
   const [currentCards, setCurrentCards] = useState(kanji);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
+  const [highScore, setHighScore] = useState(0);
 
 
   function handleClick(kanjiObj) {
     if(gameOver) return;
-    if(kanjiObj.isClicked) {
+    if(kanjiObj.isClicked === true) {
       setGameOver(true)
+      checkHighScore(score, highScore);
+      setScore(0);
+      let newDeck = currentCards.slice();
+      resetCards(newDeck);
+      setCurrentCards(newDeck);
+      setGameOver(false);
       return
     }
-    let shuffledCards = currentCards.slice();
-    shuffledCards[shuffledCards.indexOf(kanjiObj)].isClicked = true;
-    shuffledCards.sort((a, b) => 0.5 - Math.random());
-    setCurrentCards(shuffledCards);
+    let newCards = currentCards.slice();
+    newCards[newCards.indexOf(kanjiObj)].isClicked = true;
+    shuffleCards(newCards);
+    setCurrentCards(newCards);
     setScore(score + 1);
   }
 
   return (
-    
+    <>
+    <GameStats score={score} gameOver={gameOver} highScore={highScore} />
     <div style={{
       display: 'flex',
       flexWrap: 'wrap',
@@ -40,11 +41,38 @@ function App() {
       margin: '0 auto',
       maxWidth: '1200px',
     }}>
-      <h1>Score: {score}</h1>
-      <h1>{gameOver ? "Gameover" : "let's go!"}</h1>
+      
       {currentCards.map((obj) => <KanjiCard key={obj.id} card={obj} onCardClick={handleClick} />)}
     </div>
+    </>
   );
+
+  function checkHighScore(currentScore, highScore) {
+    if (currentScore > highScore) {
+      setHighScore(currentScore);
+    }
+  } 
+
+  function shuffleCards(deck) {
+    deck.sort((a, b) => 0.5 - Math.random());
+    return shuffleCards;
+  }
+
+  function resetCards(deck) {
+    deck.map((obj) => obj.isClicked = false);
+    return deck;
+  }
+
+}
+
+function GameStats({score, gameOver, highScore}) {
+  return (
+    <div>
+      <h1>Current score: {score}</h1>
+      <h1>{gameOver ? "Gameover" : "let's go!"}</h1>
+      <h1>Highest Score: {highScore}</h1>
+    </div>
+  )
 }
 
 
@@ -66,15 +94,18 @@ function KanjiCard({ card, onCardClick }) {
         maxWidth: "300px",
         padding: '15px',
         textAlign: 'center',
+        fontSize: "10px",
         }}
         onClick={() => onCardClick(card)}
         >
       <h1>{card.character}</h1>
       <p>{card.meaning}</p>
       <p>{card.reading}</p>
-      <p>{card.example}</p>
+      {/* <p>{card.example}</p> */}
     </div>
   );
 }
+
+
 
 export default App;
