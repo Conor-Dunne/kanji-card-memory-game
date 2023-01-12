@@ -40,6 +40,7 @@ function App() {
       justifyContent: 'center',
       padding: '10px',
       margin: '0 auto',
+      marginTop: "50px",
     }}>
       
       {currentCards.map((obj) => <KanjiCard key={obj.id} card={obj} onCardClick={handleClick} />)}
@@ -69,7 +70,18 @@ function App() {
 
 function GameStats({score, gameOver, highScore}) {
   return (
-    <div>
+    <div style={{
+      background: "white",
+      display: "flex",
+      justifyContent: 'space-around',
+      flexWrap: "wrap",
+      gap: "20px",
+      position: "fixed",
+      top: "0",
+      width: "100%",
+      borderBottom: "5px solid pink",
+      boxShadow: '#d093d6 1px 0px 13px 0px',
+    }}>
       <h1>Current score: {score}</h1>
       <h1>{gameOver ? "Gameover" : "let's go!"}</h1>
       <h1>Highest Score: {highScore}</h1>
