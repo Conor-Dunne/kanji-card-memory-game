@@ -40,13 +40,11 @@ function App() {
       justifyContent: 'center',
       padding: '10px',
       margin: '0 auto',
-      marginTop: "50px",
+      // marginTop: "20px",
     }}>
       
       {currentCards.map((obj) => <KanjiCard key={obj.id} card={obj} onCardClick={handleClick} />)}
     </div>
-    <p>Photo by <a href="https://unsplash.com/@gaspanik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Masaaki Komori</a> on <a href="https://unsplash.com/photos/14cHwhRKJh8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  </p>
     </>
   );
 
@@ -75,16 +73,16 @@ function GameStats({score, gameOver, highScore}) {
       display: "flex",
       justifyContent: 'space-around',
       flexWrap: "wrap",
-      gap: "20px",
-      position: "fixed",
+      gap: "10px",
+      position: "sticky",
       top: "0",
       width: "100%",
-      borderBottom: "5px solid pink",
-      boxShadow: '#d093d6 1px 0px 13px 0px',
+      boxShadow: 'rgb(177 147 180) 1px 0px 13px 0px',
     }}>
       <h1>Current score: {score}</h1>
-      <h1>{gameOver ? "Gameover" : "let's go!"}</h1>
-      <h1>Highest Score: {highScore}</h1>
+      <h1 style={{
+        color: "pink",
+      }} >High Score: {highScore}</h1>
     </div>
   )
 }
@@ -113,7 +111,7 @@ function KanjiCard({ card, onCardClick }) {
         textAlign: 'center',
         fontSize: "10px",
         fontWeight: "900",
-        fontSize: "1.5em",
+        fontSize: "0.8rem",
         boxShadow: '3px 2px 3px 0px rgb(151 129 117)',
         }}
         onClick={() => onCardClick(card)}
