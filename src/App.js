@@ -73,16 +73,34 @@ function GameStats({score, gameOver, highScore}) {
       display: "flex",
       justifyContent: 'space-around',
       flexWrap: "wrap",
-      gap: "10px",
       position: "sticky",
       top: "0",
       width: "100%",
       boxShadow: 'rgb(177 147 180) 1px 0px 13px 0px',
     }}>
-      <h1>Current score: {score}</h1>
+      <h1
+      style={{
+        color: "rgb(151 129 117)",
+      }}
+      >Current score: {score}</h1>
       <h1 style={{
         color: "pink",
       }} >High Score: {highScore}</h1>
+      <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+      }}
+      >
+      <p
+      style={{
+        fontSize: "1rem",
+        fontWeight: "800",
+      }}
+      >Don't click the same card twice</p>
+      </div>
     </div>
   )
 }
