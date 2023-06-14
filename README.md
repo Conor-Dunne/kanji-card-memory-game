@@ -1,3 +1,15 @@
+# kanji-card-memory-game
+
+
+A React Kanji matching card game.
+
+[Live Demo](https://conor-dunne.github.io/kanji-card-memory-game/) :point_left:
+
+
+## Built with
+
+- [React](https://reactjs.org/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
