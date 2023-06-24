@@ -5,6 +5,10 @@ A React Kanji matching card game.
 
 [Live Demo](https://conor-dunne.github.io/kanji-card-memory-game/) :point_left:
 
+# Screenshot
+
+![Screenshot](./public/Capture.jpg)
+
 
 ## Built with
 
